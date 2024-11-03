@@ -79,7 +79,7 @@ Memory leaks were a persistent challenge. Using Valgrind, I resolved allocation 
 
 ### 4. **Building a Clear, Modular API for WAL Parsing and Writing**
 
-Given the complexity of WAL operations, creating a clear and modular API was crucial. The API needed to accommodate varying PostgreSQL versions, support both reading and writing operations, and integrate seamlessly with Pgmoneta’s existing infrastructure. However, balancing simplicity with functionality was a challenge, especially as the project scope expanded to include writing functionality and CLI options for multiple output formats (raw and JSON).
+Given the complexity of WAL operations, creating a clear and modular API was crucial. The API needed to accommodate varying PostgreSQL versions, support both reading and writing operations and integrate seamlessly with pgmoneta’s existing infrastructure. However, balancing simplicity with functionality was a challenge, especially as the project scope expanded to include writing functionality and CLI options for multiple output formats (raw and JSON).
 
 To ensure clarity and modularity, I introduced `walfile.h` as a central header file that consolidated all WAL-related operations, including reading, writing, and format conversions. This file exposed only high-level functions necessary for external use, hiding the internal complexities from other parts of the codebase. I also added extensive inline documentation, which explained each function’s purpose, inputs, and outputs, making the API easier for others to use and modify. Through feedback from my mentors, I refined the API further, ensuring that it was both user-friendly and adaptable to future enhancements, such as adding new serialization formats or debug features.
 
